@@ -24,12 +24,6 @@ available in search results (`brew search` output):
 brew tap intercloud/tap
 ```
 
-Note: to clone the tap via SSH you will need to use:
-
-```sh
-brew tap intercloud/tap https://github.com/intercloud/homebrew-tap
-```
-
 While you may search across taps, it is necessary to always use
 fully qualified name (incl. the `intercloud/tap/` prefix)
 when refering to formulae in external taps such as this one
