@@ -5,21 +5,21 @@
 class Gobinsec < Formula
   desc "Gobinsec"
   homepage "https://github.com/intercloud/gobinsec"
-  version "0.10.0"
+  version "0.10.1"
   license "MPL"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.0/gobinsec_darwin_arm64.tar.gz"
-      sha256 "3d7dc474320dff3eb8845899e51f61106c97c63af61e29240e6a06fcba0f2025"
+    if Hardware::CPU.intel?
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_darwin_x86_64.tar.gz"
+      sha256 "2ab7f4cb49da99621519dcdaea8979dab046c42e97397b476be963b6bca48d0d"
 
       def install
         bin.install "gobinsec"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.0/gobinsec_darwin_x86_64.tar.gz"
-      sha256 "d001282f01b1ac23eec8befde98e3f3d906c4559de0f598d4ece2d0545390434"
+    if Hardware::CPU.arm?
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_darwin_arm64.tar.gz"
+      sha256 "b2cb850b55448a3cbd8e87d3eb60884fc079990c7713fd3089fd1fbf8f9e70ac"
 
       def install
         bin.install "gobinsec"
@@ -28,17 +28,17 @@ class Gobinsec < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.0/gobinsec_linux_arm64.tar.gz"
-      sha256 "f6ce1cb046b3c21f7e951c8a875867fd3c738c6db8f7b1370504d4003edc6a73"
+    if Hardware::CPU.intel?
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_linux_x86_64.tar.gz"
+      sha256 "f54154009b238dd334523ed13563ed1b33bdc05520d5937a99241963e134eaa9"
 
       def install
         bin.install "gobinsec"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.0/gobinsec_linux_x86_64.tar.gz"
-      sha256 "3c6f55f083aedee1839aa30e5595faa717255aab31b070029e405054fe4ce5a8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_linux_arm64.tar.gz"
+      sha256 "2960267a5425ba208559497b09931183786bddb2a624359dd418e3f72a2677c3"
 
       def install
         bin.install "gobinsec"
