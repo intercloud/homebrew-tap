@@ -5,21 +5,21 @@
 class Gobinsec < Formula
   desc "Gobinsec"
   homepage "https://github.com/intercloud/gobinsec"
-  version "0.10.1"
+  version "0.10.2"
   license "MPL"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_darwin_x86_64.tar.gz"
-      sha256 "2ab7f4cb49da99621519dcdaea8979dab046c42e97397b476be963b6bca48d0d"
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.2/gobinsec_darwin_x86_64.tar.gz"
+      sha256 "384a3cf3a7a67b6824ac4bee351e2956c8f094df4a80e4deeaf11fd670a052ca"
 
       def install
         bin.install "gobinsec"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_darwin_arm64.tar.gz"
-      sha256 "b2cb850b55448a3cbd8e87d3eb60884fc079990c7713fd3089fd1fbf8f9e70ac"
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.2/gobinsec_darwin_arm64.tar.gz"
+      sha256 "7719ea1ae7a1b6123e5481990c30939d876fa834fae5ab04e487a2a56900bd44"
 
       def install
         bin.install "gobinsec"
@@ -28,17 +28,17 @@ class Gobinsec < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_linux_x86_64.tar.gz"
-      sha256 "f54154009b238dd334523ed13563ed1b33bdc05520d5937a99241963e134eaa9"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.2/gobinsec_linux_arm64.tar.gz"
+      sha256 "df821c118fd8056c3b9f8d00bc09e91b18c7004e44e2afd801eb2e0f41e2908c"
 
       def install
         bin.install "gobinsec"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.1/gobinsec_linux_arm64.tar.gz"
-      sha256 "2960267a5425ba208559497b09931183786bddb2a624359dd418e3f72a2677c3"
+    if Hardware::CPU.intel?
+      url "https://github.com/intercloud/gobinsec/releases/download/v0.10.2/gobinsec_linux_x86_64.tar.gz"
+      sha256 "456a407a2b53bf49034b66533270c399572253c1d2e85156d82a9547dec39c94"
 
       def install
         bin.install "gobinsec"
